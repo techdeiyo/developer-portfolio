@@ -1,20 +1,20 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor Degree",
-    duration: "2020 - Present",
-    institution: "National University of Bangladesh",
+    title: "BSc (Hons) Software Engineering",
+    duration: "2021 - Present",
+    institution: "Birmingham City University",
   },
   {
     id: 2,
-    title: "Higher Secondary Certificate",
-    duration: "2018 - 2020",
-    institution: "Noakhali Islamia Kamil Madrasah",
+    title: "HND in Psychology",
+    duration: "2023 - Present",
+    institution: "Nile University of Science and Technology ",
   },
   {
     id: 3,
-    title: "Secondary School Certificate",
-    duration: "2008 - 2018",
-    institution: "Baitus Saif Islamia Madrasah",
+    title: "DIP in human resource management",
+    duration: "2023 - Present",
+    institution: "IBS Campus",
   }
 ]
