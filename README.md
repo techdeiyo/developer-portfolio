@@ -120,7 +120,7 @@ export const personalData = {
   profile: "/profile.png",
   designation: "Full-Stack Software Developer",
   description: "My name is Sanjana Shamal....",
-  email: "abusaid7388@gmail.com",
+  email: "x",
   phone: "+8801608797655",
   address: "Dhaka, Bangladesh",
   github: "https://github.com/said7388",

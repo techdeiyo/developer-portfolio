@@ -17,8 +17,8 @@ function Footer() {
           <div className="flex items-center gap-5">
             <Link
               target="_blank"
-              href="https://github.com/said7388/developer-portfolio"
-              className="flex items-center text-sm gap-2 uppercase hover:text-[#16f2b3]"
+              href="/privacy"
+              className="flex items-center text-sm gap-2 hover:text-[#16f2b3]"
             >
               <p>Privacy</p>
             </Link>

@@ -1,7 +1,10 @@
 const path = require('path')
- 
+
 module.exports = {
-  sassOptions: {
+  webpack: (config, { isServer }) => {
+    // Custom webpack configuration if needed
+    return config;
+  }, sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {

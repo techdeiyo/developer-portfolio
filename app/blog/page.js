@@ -1,28 +1,44 @@
-// Import fetchAPI function from your project
-import { fetchAPI } from '../api/api';
+// @flow strict
 
-async function getAllPosts() {
-  const query = `
-    query {
-      posts {
-        nodes {
-          title
-          content
-          // Add other fields you need
-        }
-      }
-    }
-  `;
+import { personalData } from "@/utils/data/personal-data";
+import BlogCard from "../components/homepage/blog/blog-card";
 
-  try {
-    const data = await fetchAPI(query);
-    return data.posts.nodes;
-  } catch (error) {
-    console.error('Failed to fetch posts:', error);
-    return [];
+async function getBlogs() {
+  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
   }
-}
 
-// Call the function to get all posts
-const allPosts = await getAllPosts();
-console.log(allPosts);
+  const data = await res.json();
+  return data;
+};
+
+async function page() {
+  const blogs = await getBlogs();
+
+  return (
+    <div className="py-8">
+      <div className="flex justify-center my-5 lg:py-8">
+        <div className="flex  items-center">
+          <span className="w-24 h-[2px] bg-[#16f2b3]"></span>
+          <span className="bg-[#16f2b3] w-fit text-black font-bold p-2 px-5 text-2xl rounded-md">
+            All Blog
+          </span>
+          <span className="w-24 h-[2px] bg-[#16f2b3]"></span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
+        {
+          blogs.map((blog, i) => (
+            blog?.cover_image &&
+            <BlogCard blog={blog} key={i} />
+          ))
+        }
+      </div>
+    </div>
+  );
+};
+
+export default page;

@@ -157,7 +157,7 @@ export const skillsImage = (skill) => {
       return ruby;
     case 'swift':
       return swift;
-    case 'adobe audition':
+    case 'audition':
       return adobeaudition;
     case 'aws':
       return aws;
@@ -213,7 +213,7 @@ export const skillsImage = (skill) => {
       return ionic;
     case 'markdown':
       return markdown;
-    case 'microsoft office':
+    case 'office':
       return microsoftoffice;
     case 'picsart':
       return picsart;
